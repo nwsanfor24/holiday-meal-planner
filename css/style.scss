@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Lobster|Pacifico|Passion+One&display=swap');
+
+$primary-color: #D31027; 
+$secondary-color: #D31027;
+$grey: #62727C;
+$light-grey:#ECE9E6;
+$light-color: #ffffff;
+$default-padding: 15px;
+$primary-font: 'Lobster', cursive;;
+
+body {
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    font-size: 18px;
+}
+
+nav {
+    background: #D31027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EA384D, #D31027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    li {
+        font-weight: bold;
+    }
+}
+
+.brand-logo {
+    margin-left: $default-padding;
+}
+
+h1, h2, h3, th {
+    font-family: $primary-font;
+    margin: $default-padding 0;
+}
+
+.brand-logo {
+    font-family: $primary-font;
+}
+
+button.mycolor {
+    background-color: $primary-color;
+    font-weight: bold;
+    &:hover, &:active, &:focus {
+        background-color:lighten($primary-color, 20%);  
+    }
+}
+
+.btn-choice {
+    text-transform: none;
+    display: block;
+    margin-bottom: $default-padding;
+}
+
+.btn-block {
+    display: inline-block;
+}
+
