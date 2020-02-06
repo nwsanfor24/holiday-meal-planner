@@ -58,3 +58,13 @@ button.mycolor {
     display: inline-block;
 }
 
+.meal-description, .cocktail-description {
+    font-size: larger;
+}
+
+.horizontal {
+    .card-image{
+        max-width: 300px;
+    }
+}
+
