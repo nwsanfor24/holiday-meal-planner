@@ -3,11 +3,11 @@ $(document).ready(function() {
     let drinkURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php?a=Alcoholic";
     let mealURL = "https://www.themealdb.com/api/json/v1/1/random.php";
 
-    
+   function updateDrink() { 
     $.ajax({
         url: drinkURL,
         method: "GET",
-    }).then(function updateDrink(response) {
+    }).then(function(response) {
         $(".cocktail-title").text(response.drinks[0].strDrink);
         $(".cocktail-img").attr("src", response.drinks[0].strDrinkThumb);
         $(".cocktail-description").text(response.drinks[0].strGlass);
@@ -55,6 +55,6 @@ $(document).ready(function() {
         };
     });
 
-
+   };
 
 });
