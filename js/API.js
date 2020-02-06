@@ -11,7 +11,7 @@ $(document).ready(function() {
         $(".cocktail-title").text(response.drinks[0].strDrink);
         $(".cocktail-img").attr("src", response.drinks[0].strDrinkThumb);
         $(".cocktail-description").text(response.drinks[0].strGlass);
-        $(".cocktail-steps").text(respopnse.drinks[0].strInstructions);
+        $(".cocktail-steps").text(response.drinks[0].strInstructions);
 
         let drinkAmounts = [
             response.drinks[0].strMeasure1,
