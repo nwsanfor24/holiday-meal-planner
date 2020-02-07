@@ -1,11 +1,9 @@
-$(document).ready(function() {
+let drinkInfoURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+let mealURL = "https://www.themealdb.com/api/json/v1/1/random.php";
 
-    let drinkInfoURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
-    let mealURL = "https://www.themealdb.com/api/json/v1/1/random.php";
-
-   function updateDrink() { 
+function updateDrink() { 
        
-     $.ajax({
+    $.ajax({
         url: drinkInfoURL,
         method: "GET",
      }).then(function(response) {
@@ -57,5 +55,3 @@ $(document).ready(function() {
     });
 
    };
-
-});
