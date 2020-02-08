@@ -2,7 +2,8 @@ $(document).ready(function() {
 
     //Local storage variables
     let storedEvents = [];
-    
+    let savedTable = $(".savedTable");
+
     //Meal variables
     let mealName;
     let mealInstruct;
@@ -17,6 +18,27 @@ $(document).ready(function() {
     if (localStorage.getItem("savedEvents") !== null) {
         storedEvents = JSON.parse(localStorage.getItem("savedEvents"));
     }
+
+    //Populating Saved Table with events in local storage
+    function generateTable() {
+        for (let i = 0; i < storedEvents.length; i++) {
+          let tr = savedTable.append($("<tr>"));
+          let viewBtn = `<button type="button" data-index=${i} class="btn-large mycolor">View</button>`;
+          tr.append($("<td>").text(storedEvents[i].eventName));
+          tr.append($("<td>").text(storedEvents[i].eventDate));
+          tr.append($("<td>").text(storedEvents[i].mealName));
+          tr.append($("<td>").text(storedEvents[i].drinkName));
+          tr.append($("<td>").html(viewBtn));
+        };
+      };
+
+    generateTable();
+
+    $(".btn-clear").on("click", function() {
+        $(".savedTable").empty();
+        localStorage.clear();
+        storedEvents = [];
+    });
 
     //Event Handler for "Save" button
     $("#saveMeal").on("click", function(event) {
@@ -39,6 +61,7 @@ $(document).ready(function() {
             drinkIngredientList.push(drinkIngredientDiv[i].innerText);
         };    
 
+        //Created the object that will be saved to local storage
         let eventStorageObj = {
             "eventName" : eventName,
             "eventDate" : eventDate,
