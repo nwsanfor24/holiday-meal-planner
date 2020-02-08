@@ -6,6 +6,7 @@ let mealInfoURL = "https://www.themealdb.com/api/json/v1/1/random.php";
 //Function to compile button click functionality for the cocktail field
 function updateDrink() { 
     
+    //JQuery call to empty the previous card info on button push
     $(".cocktail-ingredients").empty();
 
     //Cocktal API call
@@ -79,6 +80,7 @@ function updateDrink() {
 //Function to compile button click functionality for the meal field
 function updateMeal() { 
        
+    //JQuery call to empty the previous card info on button push
     $(".meal-ingredients").empty();
 
     //Cocktal API call
