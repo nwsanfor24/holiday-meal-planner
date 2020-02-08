@@ -25,7 +25,13 @@ $(document).ready(function() {
         let eventName = $("#meal-name").val();
         let eventDate = $("#date-picker").val();
 
-        //Getting Drink Name, Instructions, and Ingredients from API
+        //Meal & Drink Names, Instructions, and Ingredients
+        mealName = $(".meal-title").text();
+        mealInstruct = $(".meal-steps").text();
+        let mealIngredientDiv = document.querySelector(".meal-ingredients").children;
+        for (i=0; i<mealIngredientDiv.length; i++) {
+            mealIngredientList.push(mealIngredientDiv[i].innerText);
+        };    
         drinkName = $(".cocktail-title").text();
         drinkInstruct = $(".cocktail-steps").text();
         let drinkIngredientDiv = document.querySelector(".cocktail-ingredients").children;
@@ -36,6 +42,9 @@ $(document).ready(function() {
         let eventStorageObj = {
             "eventName" : eventName,
             "eventDate" : eventDate,
+            "mealName" : mealName, 
+            "mealIngredients" : mealIngredientList, 
+            "mealInstructions" : mealInstruct, 
             "drinkName" : drinkName,
             "drinkIngredients" : drinkIngredientList,
             "drinkInstructions" : drinkInstruct
