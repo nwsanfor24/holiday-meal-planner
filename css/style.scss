@@ -31,7 +31,7 @@ nav {
     margin-left: $default-padding;
 }
 
-h1, h2, h3, th {
+h1, h2, h3, h4, th {
     font-family: $primary-font;
     margin: $default-padding 0;
 }
@@ -62,9 +62,7 @@ button.mycolor {
     font-size: larger;
 }
 
-.horizontal {
-    .card-image{
-        max-width: 300px;
-    }
+.card.horizontal .card-image img {
+    max-width: 300px;
 }
 
