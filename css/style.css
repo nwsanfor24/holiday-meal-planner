@@ -37,12 +37,12 @@ h1, h2, h3, h4, th {
   font-family: "Lobster", cursive;
 }
 
-button.mycolor {
+button.mycolor, a.mycolor {
   background-color: #D31027;
   font-weight: bold;
 }
 
-button.mycolor:hover, button.mycolor:active, button.mycolor:focus {
+button.mycolor:hover, button.mycolor:active, button.mycolor:focus, a.mycolor:hover, a.mycolor:active, a.mycolor:focus {
   background-color: #f25769;
 }
 
