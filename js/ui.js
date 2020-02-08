@@ -31,4 +31,8 @@ $(document).ready(function () {
         instance.open();
     });
     
+    $(".generate").on("click", function() {
+        instance.close();
+    });
+
 });
