@@ -13,6 +13,11 @@ $(document).ready(function() {
     let drinkInstruct;
     let drinkIngredientList = [];
 
+    //Getting events that have already been saved to local storage
+    if (localStorage.getItem("savedEvents") !== null) {
+        storedEvents = JSON.parse(localStorage.getItem("savedEvents"));
+    }
+
     //Event Handler for "Save" button
     $("#saveMeal").on("click", function(event) {
         event.preventDefault();
@@ -36,30 +41,6 @@ $(document).ready(function() {
             "drinkInstructions" : drinkInstruct
         };
         storedEvents.push(eventStorageObj);
-        localStorage.setItem("savedEvent", JSON.stringify(storedEvents));
+        localStorage.setItem("savedEvents", JSON.stringify(storedEvents));
     }); 
 })
-    
-    /*MEAL - Get information from local storage
-    
-    $(".btn-success").on("click", function() {
-        //WILL NEED TO CHANGE THE NAME OF LOCAL STORAGE ITEMS
-
-        let storedMeal = JSON.parse(localStorage.getItem("testMeal"));
-        let storedMealName = storedMeal.name;
-        let storedMealIngredients = storedMeal.ingredients;
-        let storedMealInstruct = storedMeal.instructions;
-
-        let storedDrink = JSON.parse(localStorage.getItem("testDrink"));
-        let storedDrinkName = storedDrink.name;
-        let storedDrinkIngredList = storedDrink.ingredients;
-        let storedDrinkInstruct = storedDrink.instructions;
-
-        $(".mealName").text(storedMealName);
-        $(".mealIngredients").text(storedMealIngredients);
-        $(".mealInstructions").text(storedMealInstruct);
-        $(".drinkName").text(storedDrinkName);
-        $(".drinkIngredients").text(storedDrinkIngredList);
-        $(".drinkInstructions").text(storedDrinkInstruct);
-    
-    }); */
