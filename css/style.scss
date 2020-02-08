@@ -66,3 +66,7 @@ button.mycolor, a.mycolor {
     max-width: 300px;
 }
 
+.modal:focus {
+    outline: none;
+}
+

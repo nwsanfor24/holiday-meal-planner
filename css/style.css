@@ -63,4 +63,8 @@ button.mycolor:hover, button.mycolor:active, button.mycolor:focus, a.mycolor:hov
 .card.horizontal .card-image img {
   max-width: 300px;
 }
+
+.modal:focus {
+  outline: none;
+}
 /*# sourceMappingURL=style.css.map */
