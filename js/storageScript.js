@@ -23,10 +23,12 @@ $(document).ready(function() {
     function generateTable() {
         for (let i = 0; i < storedEvents.length; i++) {
           let tr = savedTable.append($("<tr>"));
+          let viewBtn = `<button type="button" data-index=${i} class="btn-large mycolor">View</button>`;
           tr.append($("<td>").text(storedEvents[i].eventName));
           tr.append($("<td>").text(storedEvents[i].eventDate));
           tr.append($("<td>").text(storedEvents[i].mealName));
           tr.append($("<td>").text(storedEvents[i].drinkName));
+          tr.append($("<td>").html(viewBtn));
         };
       };
 
