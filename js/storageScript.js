@@ -80,6 +80,9 @@ $(document).ready(function() {
 
     let dataIndex;
 
+    let elem2 = document.querySelector('#mealmodal'); // Modal variable
+    let instance2 = M.Modal.init(elem2); // Modal variable
+
     function viewMeal() {
         let mealList = $(`.mealIngredients`);
         let drinkList = $(`.drinkIngredients`);
@@ -104,7 +107,8 @@ $(document).ready(function() {
     }
 
     $(".viewBtn").on("click", function() {
-        dataIndex = $(".viewBtn").attr("data-index");
+        dataIndex = $(this).attr("data-index");
         viewMeal();
+        instance2.open();
     });
 })
