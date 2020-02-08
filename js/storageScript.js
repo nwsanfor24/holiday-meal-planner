@@ -1,39 +1,48 @@
 $(document).ready(function() {
     
     //Meal variables
-
     let mealName;
     let mealInstruct;
-    let mealIngredients = [];
-    let mealAmounts = [];
     let mealIngredientList = [];
-
 
     //Drink variables
     let drinkName;
     let drinkInstruct;
-    let drinkIngredList= [];
-    let drinkIngredients = [];
-    let drinkAmountList = [];
-    let drinkAmounts= [];
-    
-    $(".btn-primary").on("click", function() {
+    let drinkIngredientList = [];
+
+    //Event Handler for "Save" button
+    $("#saveMeal").on("click", function(event) {
+        event.preventDefault();
         //Get values from entered fields (Event Name and Date)
         let eventName = $("#meal-name").val();
+            console.log(`Event Name: ${eventName}`);
         let eventDate = $("#date-picker").val();
+            console.log(`Event Date: ${eventDate}`);
+
+        //Getting Drink Name + Instructions from API
+        drinkName = $(".cocktail-title").text();
+            console.log(`Drink Name: ${drinkName}`);
+        drinkInstruct = $(".cocktail-steps").text();
+            console.log(`Drink Instructions: ${drinkInstruct}`);
+        //drinkIngredientList = $(".cocktails-ingredients");
+            //console.log(`Drink Ingredients: ${drinkIngredientList}`);
+    });
+});
+
+/*
         let mealStorageObj = {
-            "name" : mealName,
-            "ingredients" : mealIngredients,
-            "instructions" : mealInstruct
+            "name" : 
+            "ingredients" : 
+            "instructions" :
         };
         localStorage.setItem("testMeal", JSON.stringify(mealStorageObj));
         let drinkStorageObj = {
-            "name" : drinkName,
-            "ingredients" : drinkIngredients,
-            "instructions" : drinkInstruct
+            "name" : 
+            "ingredients" : 
+            "instructions" : 
         };
         localStorage.setItem("testDrink", JSON.stringify(drinkStorageObj));
-    });
+    }); 
     
     //MEAL - Get information from local storage
     
@@ -58,4 +67,5 @@ $(document).ready(function() {
         $(".drinkInstructions").text(storedDrinkInstruct);
     
     });
-    });
+});
+*/
