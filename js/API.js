@@ -151,7 +151,7 @@ function updateMeal() {
                 let newMeal = $("<li>").text(`${postedMealIngredients}`);
                 $(".meal-ingredients").append(newMeal);
                 }
-            else if (mealIngredients[i] !== "") {
+            else if ((mealIngredients[i] !== "") && (mealIngredients[i] !== null)) {
                 $(".meal-ingredients").append(newMeal);
                 }
             };
