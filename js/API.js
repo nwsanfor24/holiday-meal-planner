@@ -1,3 +1,5 @@
+
+
 let drinkInfoURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 let mealURL = "https://www.themealdb.com/api/json/v1/1/random.php";
 
