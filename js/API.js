@@ -51,9 +51,18 @@ function updateDrink() {
         ];
 
         for (i = 0; i < drinkIngredients.length; i++) {
-            let newDrink = $("<li>").text(`${drinkAmounts[i]} ${drinkIngredients[i]}`);
-            $(".cocktail-ingredients").append(newDrink);
-        };
+            let postedDrinkAmounts = drinkAmounts[i];
+            let postedDrinkIngredients = drinkIngredients[i];
+            let newDrink = $("<li>").text(`${postedDrinkAmounts} ${postedDrinkIngredients}`);
+            if (drinkAmounts[i] !== null) {
+                let newDrink = $("<li>").text(`${postedDrinkIngredients}`);
+                $(".cocktail-ingredients").append(newDrink);
+            }
+            if (drinkIngredients[i] !== null) {
+                $(".cocktail-ingredients").append(newDrink);
+            }
+            };
+
     });
 
 
