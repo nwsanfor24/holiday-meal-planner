@@ -2,7 +2,8 @@ $(document).ready(function() {
 
     //Local storage variables
     let storedEvents = [];
-    
+    let savedTable = $(".savedTable");
+
     //Meal variables
     let mealName;
     let mealInstruct;
@@ -18,6 +19,25 @@ $(document).ready(function() {
         storedEvents = JSON.parse(localStorage.getItem("savedEvents"));
     }
 
+    //Populating Saved Table with events in local storage
+    function generateTable() {
+        for (let i = 0; i < storedEvents.length; i++) {
+          let tr = savedTable.append($("<tr>"));
+          tr.append($("<td>").text(storedEvents[i].eventName));
+          tr.append($("<td>").text(storedEvents[i].eventDate));
+          tr.append($("<td>").text(storedEvents[i].mealName));
+          tr.append($("<td>").text(storedEvents[i].drinkName));
+        };
+      };
+
+    generateTable();
+
+    $(".btn-clear").on("click", function() {
+        $(".savedTable").empty();
+        localStorage.clear();
+        storedEvents = [];
+    });
+
     //Event Handler for "Save" button
     $("#saveMeal").on("click", function(event) {
         event.preventDefault();
@@ -25,7 +45,13 @@ $(document).ready(function() {
         let eventName = $("#meal-name").val();
         let eventDate = $("#date-picker").val();
 
-        //Getting Drink Name, Instructions, and Ingredients from API
+        //Meal & Drink Names, Instructions, and Ingredients
+        mealName = $(".meal-title").text();
+        mealInstruct = $(".meal-steps").text();
+        let mealIngredientDiv = document.querySelector(".meal-ingredients").children;
+        for (i=0; i<mealIngredientDiv.length; i++) {
+            mealIngredientList.push(mealIngredientDiv[i].innerText);
+        };    
         drinkName = $(".cocktail-title").text();
         drinkInstruct = $(".cocktail-steps").text();
         let drinkIngredientDiv = document.querySelector(".cocktail-ingredients").children;
@@ -33,9 +59,13 @@ $(document).ready(function() {
             drinkIngredientList.push(drinkIngredientDiv[i].innerText);
         };    
 
+        //Created the object that will be saved to local storage
         let eventStorageObj = {
             "eventName" : eventName,
             "eventDate" : eventDate,
+            "mealName" : mealName, 
+            "mealIngredients" : mealIngredientList, 
+            "mealInstructions" : mealInstruct, 
             "drinkName" : drinkName,
             "drinkIngredients" : drinkIngredientList,
             "drinkInstructions" : drinkInstruct

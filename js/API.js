@@ -3,13 +3,11 @@
 let drinkInfoURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 let mealInfoURL = "https://www.themealdb.com/api/json/v1/1/random.php";
 
-//Function to compile button click functionality for the cocktail field
 function updateDrink() { 
     
     //JQuery call to empty the previous card info on button push
     $(".cocktail-ingredients").empty();
 
-    //Cocktal API call
     $.ajax({
         url: drinkInfoURL,
         method: "GET",

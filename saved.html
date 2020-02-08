@@ -59,21 +59,10 @@
                 <th>Holiday Date</th>
                 <th>Meal Recipe</th>
                 <th>Cocktail Recipe</th>
+                <th>View</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Birthday</td>
-                <td id="date">1-1-2020</td>
-                <td>www.website.com</td>
-                <td>www.website.com</td>
-              </tr>
-              <tr>
-                <td>Birthday</td>
-                <td>1-1-2020</td>
-                <td>www.website.com</td>
-                <td>www.website.com</td>
-              </tr>
+            <tbody class="savedTable">
             </tbody>
           </table>
         </div>
@@ -81,6 +70,36 @@
       <button type="button" class="btn-large mycolor btn-clear">Clear Recipes</button>
     </div>
   </div>
+
+    <!-- --------------------------------------------------
+    Save Modal 
+    --------------------------------------------------- -->
+    
+    <div id="mealmodal" class="modal">
+      <div class="modal-content">
+        <h2>Event Name</h2>
+        <p>Event Date</p>
+
+        <h3><i class="fas fa-utensils"></i> Meal: <span class="meal-title"></span></h3>
+        <h4>Ingredients</h4>
+        <ol class="meal-ingredients">
+        </ol>
+        <h4>Instructions</h4>
+        <p class="meal-steps">
+        </p>
+
+        <h3><i class="fas fa-cocktail"></i> Cocktail: <span class="cocktail-title activator"></span></h3>
+        <h4>Ingredients</h4>
+        <ol class="cocktail-ingredients">
+        </ol>
+        <h4>Instructions</h4>
+          <p class="cocktail-steps">
+          </p>
+
+      </div>
+    </div>
+
+    <a class="waves-effect waves-light btn modal-trigger" href="#mealmodal">Modal</a>
 
   </div>
 
