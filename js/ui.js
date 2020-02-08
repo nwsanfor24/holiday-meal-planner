@@ -33,6 +33,8 @@ $(document).ready(function () {
     
     $(".generate").on("click", function() {
         instance.close();
+        $("#meal-name").val("");
+        $("#date-picker").val("");
     });
 
 });
