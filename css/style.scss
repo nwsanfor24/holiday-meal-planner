@@ -31,7 +31,7 @@ nav {
     margin-left: $default-padding;
 }
 
-h1, h2, h3, th {
+h1, h2, h3, h4, th {
     font-family: $primary-font;
     margin: $default-padding 0;
 }
@@ -40,7 +40,7 @@ h1, h2, h3, th {
     font-family: $primary-font;
 }
 
-button.mycolor {
+button.mycolor, a.mycolor {
     background-color: $primary-color;
     font-weight: bold;
     &:hover, &:active, &:focus {
@@ -62,9 +62,11 @@ button.mycolor {
     font-size: larger;
 }
 
-.horizontal {
-    .card-image{
-        max-width: 300px;
-    }
+.card.horizontal .card-image img {
+    max-width: 300px;
+}
+
+.modal:focus {
+    outline: none;
 }
 

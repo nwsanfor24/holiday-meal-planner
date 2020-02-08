@@ -28,7 +28,7 @@ nav li {
   margin-left: 15px;
 }
 
-h1, h2, h3, th {
+h1, h2, h3, h4, th {
   font-family: "Lobster", cursive;
   margin: 15px 0;
 }
@@ -37,12 +37,12 @@ h1, h2, h3, th {
   font-family: "Lobster", cursive;
 }
 
-button.mycolor {
+button.mycolor, a.mycolor {
   background-color: #D31027;
   font-weight: bold;
 }
 
-button.mycolor:hover, button.mycolor:active, button.mycolor:focus {
+button.mycolor:hover, button.mycolor:active, button.mycolor:focus, a.mycolor:hover, a.mycolor:active, a.mycolor:focus {
   background-color: #f25769;
 }
 
@@ -60,7 +60,11 @@ button.mycolor:hover, button.mycolor:active, button.mycolor:focus {
   font-size: larger;
 }
 
-.horizontal .card-image {
+.card.horizontal .card-image img {
   max-width: 300px;
+}
+
+.modal:focus {
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */
