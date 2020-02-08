@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+    //Local storage variables
+    let storedEvents = [];
     
     //Meal variables
     let mealName;
@@ -24,25 +27,20 @@ $(document).ready(function() {
         for (i=0; i<drinkIngredientDiv.length; i++) {
             drinkIngredientList.push(drinkIngredientDiv[i].innerText);
         };    
-    });
-});
 
-/*
-        let mealStorageObj = {
-            "name" : 
-            "ingredients" : 
-            "instructions" :
+        let eventStorageObj = {
+            "eventName" : eventName,
+            "eventDate" : eventDate,
+            "drinkName" : drinkName,
+            "drinkIngredients" : drinkIngredientList,
+            "drinkInstructions" : drinkInstruct
         };
-        localStorage.setItem("testMeal", JSON.stringify(mealStorageObj));
-        let drinkStorageObj = {
-            "name" : 
-            "ingredients" : 
-            "instructions" : 
-        };
-        localStorage.setItem("testDrink", JSON.stringify(drinkStorageObj));
+        storedEvents.push(eventStorageObj);
+        localStorage.setItem("savedEvent", JSON.stringify(storedEvents));
     }); 
+})
     
-    //MEAL - Get information from local storage
+    /*MEAL - Get information from local storage
     
     $(".btn-success").on("click", function() {
         //WILL NEED TO CHANGE THE NAME OF LOCAL STORAGE ITEMS
@@ -64,6 +62,4 @@ $(document).ready(function() {
         $(".drinkIngredients").text(storedDrinkIngredList);
         $(".drinkInstructions").text(storedDrinkInstruct);
     
-    });
-});
-*/
+    }); */
