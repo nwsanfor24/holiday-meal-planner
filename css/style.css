@@ -55,4 +55,12 @@ button.mycolor:hover, button.mycolor:active, button.mycolor:focus {
 .btn-block {
   display: inline-block;
 }
+
+.meal-description, .cocktail-description {
+  font-size: larger;
+}
+
+.horizontal .card-image {
+  max-width: 300px;
+}
 /*# sourceMappingURL=style.css.map */
