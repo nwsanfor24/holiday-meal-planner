@@ -8,11 +8,11 @@ function updateDrink() {
     $.ajax({
         url: drinkInfoURL,
         method: "GET",
-     }).then(function(response) {
+    }).then(function (response) {
         $(".cocktail-title").text(response.drinks[0].strDrink);
         $(".cocktail-img").attr("src", response.drinks[0].strDrinkThumb);
         $(".cocktail-description").text(response.drinks[0].strGlass);
-        $(".cocktail-steps").text(respopnse.drinks[0].strInstructions);
+        $(".cocktail-steps").text(response.drinks[0].strInstructions);
 
         let drinkAmounts = [
             response.drinks[0].strMeasure1,
@@ -31,7 +31,7 @@ function updateDrink() {
             response.drinks[0].strMeasure14,
             response.drinks[0].strMeasure15,
         ];
-        
+
         let drinkIngredients = [
             response.drinks[0].strIngredient1,
             response.drinks[0].strIngredient2,
@@ -50,10 +50,12 @@ function updateDrink() {
             response.drinks[0].strIngredient15,
         ];
 
-        for(i=0; i < drinkIngredients.length; i++) {
+        for (i = 0; i < drinkIngredients.length; i++) {
             let newDrink = $("<li>").text(`${drinkAmounts[i]} ${drinkIngredients[i]}`);
             $(".cocktail-ingredients").append(newDrink);
         };
     });
 
+
    };
+
