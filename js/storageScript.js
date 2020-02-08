@@ -23,7 +23,7 @@ $(document).ready(function() {
     function generateTable() {
         for (let i = 0; i < storedEvents.length; i++) {
           let tr = savedTable.append($("<tr>"));
-          let viewBtn = `<button type="button" data-index=${i} class="btn-large mycolor">View</button>`;
+          let viewBtn = `<button type="button" data-index="${i}" class="btn-large mycolor viewBtn">View</button>`;
           tr.append($("<td>").text(storedEvents[i].eventName));
           tr.append($("<td>").text(storedEvents[i].eventDate));
           tr.append($("<td>").text(storedEvents[i].mealName));
@@ -75,4 +75,36 @@ $(document).ready(function() {
         storedEvents.push(eventStorageObj);
         localStorage.setItem("savedEvents", JSON.stringify(storedEvents));
     }); 
+
+    // this is Jen's function... will need to merge with Oliva
+
+    let dataIndex;
+
+    function viewMeal() {
+        let mealList = $(`.mealIngredients`);
+        let drinkList = $(`.drinkIngredients`);
+        mealList.empty();
+        drinkList.empty();
+
+        
+        $(`.eventName`).text(storedEvents[dataIndex].eventName);
+        $(`.eventDate`).text(storedEvents[dataIndex].eventDate);
+        $(`.mealName`).text(storedEvents[dataIndex].mealName);
+        $(`.drinkName`).text(storedEvents[dataIndex].drinkName);
+        $(`.mealInstructions`).text(storedEvents[dataIndex].mealInstructions);
+        $(`.drinkInstructions`).text(storedEvents[dataIndex].drinkInstructions);
+
+        for (i = 0; i < storedEvents[dataIndex].mealIngredients.length; i++) {
+            mealList.append($(`<li>`).text(storedEvents[dataIndex].mealIngredients[i]));
+            }
+        
+        for (i = 0; i < storedEvents[dataIndex].drinkIngredients.length; i++) {
+            drinkList.append($(`<li>`).text(storedEvents[dataIndex].drinkIngredients[i]));
+            }
+    }
+
+    $(".viewBtn").on("click", function() {
+        dataIndex = $(".viewBtn").attr("data-index");
+        viewMeal();
+    });
 })
