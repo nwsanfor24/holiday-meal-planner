@@ -10,10 +10,20 @@ $(document).ready(function () {
     var meal = $("#meal-name").val();
     var date = $("#date-picker").val();
 
-    function saveMeal() {
-        $("#saveMeal").on("click", function () {
-            $("#date").attr(date);
-        })
-    }
-    saveMeal();
+    
+
+    function lockCocktail() {
+        $("#lockCocktail").on("click", function () {
+            $("#lockCocktail").toggleClass("fa-unlock fa-lock");          
+            
+        });
+    };
+    lockCocktail();
+
+    function lockMeal() {
+        $("#lockMeal").on("click", function () {
+            $("#lockMeal").toggleClass("fa-unlock fa-lock");
+        });
+    };
+    lockMeal();
 });
