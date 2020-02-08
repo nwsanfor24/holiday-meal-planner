@@ -15,17 +15,15 @@ $(document).ready(function() {
         event.preventDefault();
         //Get values from entered fields (Event Name and Date)
         let eventName = $("#meal-name").val();
-            console.log(`Event Name: ${eventName}`);
         let eventDate = $("#date-picker").val();
-            console.log(`Event Date: ${eventDate}`);
 
-        //Getting Drink Name + Instructions from API
+        //Getting Drink Name, Instructions, and Ingredients from API
         drinkName = $(".cocktail-title").text();
-            console.log(`Drink Name: ${drinkName}`);
         drinkInstruct = $(".cocktail-steps").text();
-            console.log(`Drink Instructions: ${drinkInstruct}`);
-        //drinkIngredientList = $(".cocktails-ingredients");
-            //console.log(`Drink Ingredients: ${drinkIngredientList}`);
+        let drinkIngredientDiv = document.querySelector(".cocktail-ingredients").children;
+        for (i=0; i<drinkIngredientDiv.length; i++) {
+            drinkIngredientList.push(drinkIngredientDiv[i].innerText);
+        };    
     });
 });
 
