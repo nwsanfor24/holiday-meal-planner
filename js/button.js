@@ -3,6 +3,7 @@ $(document).ready(function () {
     function getDrink() {
         $("#generate").on("click", function () {
             updateDrink();
+            updateMeal();
         })
     };
     getDrink();
