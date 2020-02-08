@@ -4,6 +4,8 @@ let drinkInfoURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 let mealInfoURL = "https://www.themealdb.com/api/json/v1/1/random.php";
 
 function updateDrink() { 
+    
+    $(".cocktail-ingredients").empty();
 
     $.ajax({
         url: drinkInfoURL,
@@ -75,6 +77,8 @@ function updateDrink() {
 //Function to compile button click functionality for the meal field
 function updateMeal() { 
        
+    $(".meal-ingredients").empty();
+
     //Cocktal API call
     $.ajax({
         url: mealInfoURL,
@@ -141,7 +145,7 @@ function updateMeal() {
             let newMeal = $("<li>").text(`${postedMealAmounts} ${postedMealIngredients}`);
 
             //funtcion to filter out empty ingredient and amount fields
-            if (mealAmounts[i] === "" && mealIngredients[i] === "") {
+            if (mealAmounts[i] === "" && mealIngredients[i] == true) {
                 let newMeal = $("<li>").text(`${postedMealIngredients}`);
                 $(".meal-ingredients").append(newMeal);
                 }
