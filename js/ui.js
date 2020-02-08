@@ -4,6 +4,10 @@
 
 $(document).ready(function () {
 
+    // -------------------------------------------------------------------------------------
+    // Adjusting cocktail and meal card layouts depending on screen size
+    // -------------------------------------------------------------------------------------
+
     let $card = $(`.card`);
     let $window = $(window);
 
@@ -14,6 +18,17 @@ $(document).ready(function () {
         else {
             $(`.card`).addClass(`horizontal`);
         }
+    });
+
+    // -------------------------------------------------------------------------------------
+    // Popping up modal on save
+    // -------------------------------------------------------------------------------------
+
+    let elem = document.querySelector('#savemodal'); // Modal variable
+    let instance = M.Modal.init(elem); // Modal variable
+
+    $("#saveMeal").on("click", function() {
+        instance.open();
     });
     
 });
