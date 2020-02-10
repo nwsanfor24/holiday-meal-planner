@@ -44,7 +44,7 @@ $(document).ready(function() {
     $("#saveMeal").on("click", function(event) {
         event.preventDefault();
         //Get values from entered fields (Event Name and Date)
-        let eventName = $("#meal-name").val();
+        let eventName = $("#meal-name").val().trim();
         let eventDate = $("#date-picker").val();
 
         //Meal & Drink Names, Instructions, and Ingredients
