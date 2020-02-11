@@ -18,6 +18,10 @@ function updateDrink() {
         $(".cocktail-description").text(response.drinks[0].strGlass);
         $(".cocktail-steps").text(response.drinks[0].strInstructions);
 
+        if (response.drinks[0].strAlcoholic !== "Alcoholic") {
+            updateDrink()
+        };
+
         //Pulling measurement amounts for cocktail ingredients from API
         let drinkAmounts = [
             response.drinks[0].strMeasure1,
@@ -67,7 +71,8 @@ function updateDrink() {
                 let newDrink = $("<li>").text(`${postedDrinkIngredients}`);
                 $(".cocktail-ingredients").append(newDrink);
                 }
-            else if (drinkIngredients[i] !== null) {
+            else if (drinkIngredients[i] !== null && 
+                    drinkIngredients[i] !== "") {
                 $(".cocktail-ingredients").append(newDrink);
                 }
             };
@@ -151,7 +156,8 @@ function updateMeal() {
                 let newMeal = $("<li>").text(`${postedMealIngredients}`);
                 $(".meal-ingredients").append(newMeal);
                 }
-            else if ((mealIngredients[i] !== "") && (mealIngredients[i] !== null)) {
+            else if (mealIngredients[i] !== "" && 
+                    mealIngredients[i] !== null) {
                 $(".meal-ingredients").append(newMeal);
                 }
             };
