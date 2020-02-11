@@ -1,26 +1,37 @@
 $(document).ready(function () {
 
-    function getDrink() {
+    // Generate Button
+    function getDinner() {
         $("#generate").on("click", function () {
-            updateDrink();
-            updateMeal();
+            var ct = $(`.ctbutton`);
+            var finddrinklock = ct.find(`.fa-unlock`).length;
+
+            var ml = $(`.mlbutton`);
+            var findmeallock = ml.find(`.fa-unlock`).length;
+           
+            if (finddrinklock === 1 && findmeallock === 1) {
+                updateDrink();
+                updateMeal();
+            } else if (finddrinklock === 1 && findmeallock === 0) {
+                updateDrink();
+            } else if (finddrinklock === 0 && findmeallock === 1) {
+                updateMeal();
+            } else if (finddrinklock === 0 && findmeallock === 0) {
+                return;
+            }
         })
     };
-    getDrink();
+    getDinner();
 
-    var meal = $("#meal-name").val();
-    var date = $("#date-picker").val();
-
-    
-
+    // Lock Cocktail - Generate button won't affect this if this is in the lock position
     function lockCocktail() {
-        $("#lockCocktail").on("click", function () {
-            $("#lockCocktail").toggleClass("fa-unlock fa-lock");          
-            
+        $("#lockCocktail").on("click", function (event) {
+            $("#lockCocktail").toggleClass("fa-unlock fa-lock");
         });
     };
     lockCocktail();
 
+    // Lock Meal - Generate button won't affect this if this is in the lock position
     function lockMeal() {
         $("#lockMeal").on("click", function () {
             $("#lockMeal").toggleClass("fa-unlock fa-lock");
