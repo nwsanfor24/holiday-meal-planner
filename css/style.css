@@ -67,4 +67,9 @@ button.mycolor:hover, button.mycolor:active, button.mycolor:focus, a.mycolor:hov
 .modal:focus {
   outline: none;
 }
+
+.w3-responsive {
+  display: block;
+  overflow-x: auto;
+}
 /*# sourceMappingURL=style.css.map */
