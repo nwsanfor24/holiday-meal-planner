@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    console.log("hi");
 
     //Local storage variables
     let storedEvents = [];
