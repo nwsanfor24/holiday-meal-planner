@@ -70,7 +70,15 @@ button.mycolor, a.mycolor {
     outline: none;
 }
 
+
+@media only screen and (max-width: 555px) {
+    a.brand-logo {
+        font-size: 16px;
+    }
+  }
+
 .w3-responsive {
     display: block;
     overflow-x: auto;
 }
+
