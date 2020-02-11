@@ -67,4 +67,10 @@ button.mycolor:hover, button.mycolor:active, button.mycolor:focus, a.mycolor:hov
 .modal:focus {
   outline: none;
 }
+
+@media only screen and (max-width: 555px) {
+  a.brand-logo {
+    font-size: 16px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
