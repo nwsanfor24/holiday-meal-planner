@@ -35,6 +35,8 @@ $(document).ready(function () {
         instance.close();
         $("#meal-name").val("");
         $("#date-picker").val("");
+        $(`i`).removeClass(`fa-lock`);
+        $(`i`).addClass(`fa-unlock`);
         updateDrink();
         updateMeal();
     });
