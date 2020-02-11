@@ -3,17 +3,30 @@ $(document).ready(function () {
     // Generate Button
     function getDinner() {
         $("#generate").on("click", function () {
-            updateDrink();
-            updateMeal();
+            var ct = $(`.ctbutton`);
+            var finddrinklock = ct.find(`.fa-unlock`).length;
+
+            var ml = $(`.mlbutton`);
+            var findmeallock = ml.find(`.fa-unlock`).length;
+           
+            if (finddrinklock === 1 && findmeallock === 1) {
+                updateDrink();
+                updateMeal();
+            } else if (finddrinklock === 1 && findmeallock === 0) {
+                updateDrink();
+            } else if (finddrinklock === 0 && findmeallock === 1) {
+                updateMeal();
+            } else if (finddrinklock === 0 && findmeallock === 0) {
+                return;
+            }
         })
     };
     getDinner();
 
     // Lock Cocktail - Generate button won't affect this if this is in the lock position
     function lockCocktail() {
-        $("#lockCocktail").on("click", function () {
+        $("#lockCocktail").on("click", function (event) {
             $("#lockCocktail").toggleClass("fa-unlock fa-lock");
-            $(this).off().getDinner();
         });
     };
     lockCocktail();
