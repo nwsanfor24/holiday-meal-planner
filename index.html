@@ -48,7 +48,9 @@
     <div class="row">
       <div class="col s12 m12 l12">
         <h1 class="center-align">Generate A Meal</h1>
-        <p>An application to help you meal plan for any holiday. Click the "generate" button and see what combinations you get! "Lock" a meal or cocktail to cycle through the other until you find your perfect match. Save your combinations in local storage to return to the recipes at any time. </p>
+        <p>An application to help you meal plan for any holiday. Click the "generate" button and see what combinations
+          you get! "Lock" a meal or cocktail to cycle through the other until you find your perfect match. Save your
+          combinations in local storage to return to the recipes at any time. </p>
       </div>
       <div class="col s12 m12 l12 center-align">
         <button type="button" class="mycolor btn-large" id="generate">Generate Meals</button>
@@ -76,11 +78,13 @@
           <div class="card-stacked">
             <div class="card-content">
               <h2><i class="fas fa-utensils"></i> <span class="meal-title activator">Meal Title</span></h2>
-              <p class="meal-description">Aenean commodo ligula eget dolor. Aenean massa. Parturient montes, nascetur ridiculus mus.</p>
+              <p class="meal-description">Aenean commodo ligula eget dolor. Aenean massa. Parturient montes, nascetur
+                ridiculus mus.</p>
             </div>
             <div class="card-action">
               <button type="button" class="mycolor btn-large activator">View Recipe</button>
-              <button type="button" class="mycolor btn-large mlbutton"><i class="fas fa-unlock" id="lockMeal"></i></button>
+              <button type="button" class="mycolor btn-large mlbutton"><i class="fas fa-unlock"
+                  id="lockMeal"></i></button>
             </div>
           </div>
           <div class="card-reveal">
@@ -108,7 +112,7 @@
       Steps     -   .cocktail-steps
 
      -->
-     <div class="row">
+    <div class="row">
       <div class="col s12 m12 l12">
         <div class="card horizontal">
           <div class="card-image waves-effect waves-block waves-light">
@@ -117,12 +121,14 @@
           <div class="card-stacked">
             <div class="card-content">
               <h2><i class="fas fa-cocktail"></i> <span class="cocktail-title activator">Cocktail Title</span></h2>
-              <p class="cocktail-description">Aenean commodo ligula eget dolor. Aenean massa. Parturient montes, nascetur ridiculus mus.</p>
+              <p class="cocktail-description">Aenean commodo ligula eget dolor. Aenean massa. Parturient montes,
+                nascetur ridiculus mus.</p>
             </div>
             <div class="card-action">
               <button type="button" class="mycolor btn-large activator">View Recipe</button>
-              
-              <button type="button" class="mycolor btn-large ctbutton"><i class="fas fa-unlock" id="lockCocktail"></i></button>
+
+              <button type="button" class="mycolor btn-large ctbutton"><i class="fas fa-unlock"
+                  id="lockCocktail"></i></button>
 
             </div>
           </div>
@@ -132,8 +138,8 @@
             <ol class="cocktail-ingredients">
             </ol>
             <h3>Instructions</h3>
-              <p class="cocktail-steps">
-              </p>
+            <p class="cocktail-steps">
+            </p>
           </div>
         </div>
       </div>
@@ -144,16 +150,20 @@
     --------------------------------------------------- -->
     <form>
       <div class="row">
-        <div class="col s12 m4 l4 input-field">
-          <input placeholder="Meal Name" id="meal-name" type="text" class="validate" max="100">
-          <label for="meal-name">Meal Name</label>
-        </div>
-        <div class="col s12 m4 l4 input-field">
-          <input type="text" class="datepicker" id="date-picker">
-          <label for="date-picker">Meal Date</label>
-        </div>
-        <div class="col s12 m4 l4">
-          <button type="submit" class="mycolor btn-large activator btn-block" id="saveMeal">Save Recipes</button>
+        <div class="col s12 m12 l12">
+          <div class="row wrapper-shadow">
+            <div class="col s12 m4 l4 input-field">
+              <input placeholder="Meal Name" id="meal-name" type="text" class="validate" max="100">
+              <label for="meal-name">Meal Name</label>
+            </div>
+            <div class="col s12 m4 l4 input-field">
+              <input type="text" class="datepicker" id="date-picker">
+              <label for="date-picker">Meal Date</label>
+            </div>
+            <div class="col s12 m4 l4">
+              <button type="submit" class="mycolor btn-large activator btn-block" id="saveMeal">Save Recipes</button>
+            </div>
+          </div>
         </div>
       </div>
     </form>
@@ -161,7 +171,7 @@
     <!-- --------------------------------------------------
     Save Modal 
     --------------------------------------------------- -->
-    
+
     <div id="savemodal" class="modal">
       <div class="modal-content">
         <h4>Your Meal Has Been Saved!</h4>
@@ -186,7 +196,7 @@
 
   <!-- LINK TO BRENDAN'S JAVASCRIPT HERE -->
   <script src="js/API.js"></script>
-  
+
   <!-- LINK TO NATHAN'S JAVASCRIPT HERE -->
   <script src="js/button.js"></script>
 
