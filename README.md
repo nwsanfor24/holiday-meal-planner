@@ -1,4 +1,4 @@
-# holiday-meal-planner
+# SuperEats
 An application to help you meal plan for any holiday. Click the "generate" button and see what combinations you get! "Lock" a meal or cocktail to cycle through the other until you find your perfect match. Save your combinations in local storage to return to the recipes at any time.
 
 ## Getting Started
